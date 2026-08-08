@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@theme {
+  --color-mlBlue: #00AEEF;
+  --color-mlPurple: #B85CF6;
+  --color-mlGreen: #109081;
+  --color-mlGray: #1E1E1E;
+  --color-mlText: #E5E7EB;
+}
