@@ -11,16 +11,44 @@ const {pageTitle} = Astro.props;
 		<meta name="generator" content={Astro.generator} />
     <title>{siteTitle}{pageTitle && ` - ${pageTitle}`}</title>
     <!-- Theme-aware favicons -->
-    <link rel="icon" href="/favicon-white.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" href="/favicon-black.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="/assets/favicon-white.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/assets/favicon-black.png" media="(prefers-color-scheme: dark)">
 
     <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   </head>
-  <body class="bg-mlGray text-mlText px-4">
+  <body class="bg-mlGray text-mlText p-4">
     <div class="container mx-auto">
-      <h1 class="text-4xl font-bold tracking-tight text-white">MeckaLabs</h1>
+      <header>
+        <nav class="container mx-auto flex items-center justify-between p-3">
+
+          <a class="flex items-center text-mlText tracking-tight text-xl font-semibold" href="./">
+            <img src="/assets/favicon-white.svg" alt="MeckaLabs Logo" class="h-7 w-7 mr-2">
+            MeckaLabs
+          </a>
+
+          <!-- Hamburger for mobile navigation -->
+          <div class="md:hidden cursor-pointer space-y-2">
+              <span class="block h-0.5 w-7 bg-gray-100"></span>
+              <span class="block h-0.5 w-7 bg-gray-100"></span>
+              <span class="block h-0.5 w-7 bg-gray-100"></span>
+          </div>
+
+          <!-- Navigation desktop version -->
+          <ul class="hidden md:flex text-shadow-mdspace-x-6">
+              <li><a class="text-mlText" href="./" title="Modules">Modules</a></li>
+              <li><a class="text-mlText" href="./" title="About">About</a></li>
+              <li><a class="text-mlText" href="./" title="Contact">Contact</a></li>
+          </ul>
+
+        </nav>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer class="">
+          <p class="p-1 text-mlText">&copy; MeckaLabs 2026.</p>
+      </footer>
     </div>
-    <slot />
   </body>
 </html>
