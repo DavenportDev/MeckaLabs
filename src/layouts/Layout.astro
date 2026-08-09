@@ -1,8 +1,26 @@
 ---
-import '../styles/global.css'
+import '../styles/global.css';
+const siteTitle = 'MeckaLabs';
+const {pageTitle} = Astro.props;
 ---
+<!doctype html>
 <html lang="en">
-  <body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+    <title>{siteTitle}{pageTitle && ` - ${pageTitle}`}</title>
+    <!-- Theme-aware favicons -->
+    <link rel="icon" href="/favicon-white.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/favicon-black.png" media="(prefers-color-scheme: dark)">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  </head>
+  <body class="bg-mlGray text-mlText px-4">
+    <div class="container mx-auto">
+      <h1 class="text-4xl font-bold tracking-tight text-white">MeckaLabs</h1>
+    </div>
     <slot />
   </body>
 </html>
