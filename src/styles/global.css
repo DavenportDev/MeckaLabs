@@ -7,3 +7,31 @@
   --color-mlGray: #1E1E1E;
   --color-mlText: #E5E7EB;
 }
+*{
+  font-family: 'Inter', sans-serif;
+}
+body {
+  background: #0A0F1F; /* dark base */
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgba(0, 174, 255, 0.25),
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/assets/noise.svg");
+  background-size: 200px 200px;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 1;
+}
