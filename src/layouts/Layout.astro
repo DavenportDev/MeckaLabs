@@ -28,21 +28,21 @@ const {pageTitle} = Astro.props;
           </a>
 
           <!-- Hamburger for mobile navigation -->
-          <div class="md:hidden cursor-pointer space-y-2">
+          <div class="HAMBURGER-ICON block md:hidden cursor-pointer space-y-2">
               <span class="block h-0.5 w-7 bg-gray-100"></span>
               <span class="block h-0.5 w-7 bg-gray-100"></span>
               <span class="block h-0.5 w-7 bg-gray-100"></span>
           </div>
 
           <!-- Navigation desktop version -->
-          <ul class="hidden md:flex text-shadow-mdspace-x-6">
+          <ul class="NAVIGATION hidden md:flex text-shadow-md space-x-6">
               <li><a class="text-mlText p-1" href="./" title="Modules">Modules</a></li>
               <li><a class="text-mlText p-1" href="./" title="About">About</a></li>
               <li><a class="text-mlText p-1" href="./" title="Contact">Contact</a></li>
           </ul>
 
         </nav>
-        <div class="border border-mlText">
+        <div class="border border-mlText border-t-0">
           <h1 class="text-mlText text-2xl font-bold p-3">MeckaLabs</h1>
         </div>
       </header>
@@ -53,5 +53,13 @@ const {pageTitle} = Astro.props;
           <p class="p-1 text-mlText">&copy; MeckaLabs 2026.</p>
       </footer>
     </div>
+    <script>
+      const hamburgerIcon = document.querySelector('.HAMBURGER-ICON');
+      const navigation = document.querySelector('.NAVIGATION');
+
+      hamburgerIcon.addEventListener('click', () => {
+        navigation.classList.toggle('hidden');
+      });
+    </script>
   </body>
 </html>
