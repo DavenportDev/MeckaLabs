@@ -5,13 +5,13 @@
   --color-mlPurple: #B85CF6;
   --color-mlGreen: #109081;
   --color-mlGray: #1E1E1E;
-  --color-mlText: #E5E7EB;
+  --color-mlText: #F8FAFC;
 }
 *{
   font-family: 'Inter', sans-serif;
 }
 body {
-  background: #0A0F1F; /* dark base */
+  background: #060918; /* dark base */
 }
 body::before {
   content: "";
@@ -20,7 +20,7 @@ body::before {
   background: radial-gradient(
     circle at 50% 20%,
     rgba(0, 174, 255, 0.25),
-    transparent 100%
+    transparent 75%
   );
   pointer-events: none;
   z-index: 0;

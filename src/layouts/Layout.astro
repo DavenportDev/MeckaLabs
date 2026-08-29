@@ -22,33 +22,46 @@ const {pageTitle} = Astro.props;
       <header>
         <nav class="container mx-auto flex items-center justify-between p-3 border-mlText border">
 
+          <!-- Logo and site title -->
           <a class="flex items-center text-mlText tracking-tight text-xl font-semibold" href="./">
-            <img src="/assets/favicon-white.svg" alt="MeckaLabs Logo" class="h-7 w-7 mr-2">
+            <img src="/assets/logo-thicker.svg" alt="MeckaLabs Logo" class="h-7 w-7 mr-2">
             MeckaLabs
           </a>
 
           <!-- Navigation desktop version -->
-          <ul class="NAVIGATION hidden md:flex text-shadow-md space-x-6">
+          <ul id="desktop-nav" class="hidden md:flex text-shadow-md space-x-6">
               <li><a class="text-mlText p-1" href="./" title="Modules">Modules</a></li>
               <li><a class="text-mlText p-1" href="./" title="About">About</a></li>
               <li><a class="text-mlText p-1" href="./" title="Contact">Contact</a></li>
           </ul>
 
           <!-- Hamburger for mobile navigation -->
-          <div class="HAMBURGER-ICON block md:hidden cursor-pointer space-y-2">
+          <div id="hamburger-icon" class="block md:hidden cursor-pointer space-y-2">
               <span class="block h-0.5 w-7 bg-gray-100"></span>
               <span class="block h-0.5 w-7 bg-gray-100"></span>
               <span class="block h-0.5 w-7 bg-gray-100"></span>
           </div>
 
         </nav>
-        <div class="border border-mlText border-t-0 flex flex-row">
-          <div class="basis-3/4">
+        
+        <!-- Navigation mobile version -->
+        <ul id="mobile-nav" class="hidden md:hidden text-shadow-md space-y-2 p-4 border border-t-0">
+            <li><a class="text-mlText p-1" href="./" title="Modules">Modules</a></li>
+            <li><a class="text-mlText p-1" href="./" title="About">About</a></li>
+            <li><a class="text-mlText p-1" href="./" title="Contact">Contact</a></li>
+        </ul>
+
+        <!-- End of navigation -->
+
+        <div class="border border-mlText text-md border-t-0 flex flex-col md:flex-row">
+          <div class="md:basis-3/4">
             <h2 class="text-mlText text-5xl font-bold p-4">Modular Systems for Engineering & Design</h2>
-            <hr class="border-mlText border-t-2 w-3/4 mx-4 mb-1">
+            <hr class="border-mlText border-t-2 mx-4 mb-1">
             <p class="text-mlText p-4 pt-0 text-xl">Innovative tools, automation, and UI solutions</p>
+            <a href="./" class="inline-block px-5 py-2 ml-5 mb-5 font-medium text-mlText hover:bg-gray-800 transition cursor-pointer border">Explore Modules</a>
+            <a href="./" class="inline-block px-5 py-2 ml-5 mb-5 font-medium text-mlText hover:bg-gray-800 transition cursor-pointer border">About the Lab</a>
           </div>
-          <div class="basis-1/3"></div>
+          <div class="md:basis-1/3"></div>
         </div>
       </header>
       <main>
@@ -59,11 +72,11 @@ const {pageTitle} = Astro.props;
       </footer>
     </div>
     <script>
-      const hamburgerIcon = document.querySelector('.HAMBURGER-ICON');
-      const navigation = document.querySelector('.NAVIGATION');
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const mobileNav = document.getElementById('mobile-nav');
 
       hamburgerIcon.addEventListener('click', () => {
-        navigation.classList.toggle('hidden');
+        mobileNav.classList.toggle('hidden');
       });
     </script>
   </body>
