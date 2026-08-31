@@ -1,0 +1,40 @@
+---
+import Hero from './Hero.astro';
+---
+<header>
+    <nav class="mx-auto flex items-center justify-between p-3 border-mlText border">
+
+        <!-- Logo and site title -->
+        <a class="flex items-center text-mlText tracking-tight text-xl font-semibold" href="./">
+        <img src="/assets/logo-thicker.svg" alt="MeckaLabs Logo" class="h-7 w-7 mr-2">
+        MeckaLabs
+        </a>
+
+        <!-- Navigation desktop version -->
+        <ul id="desktop-nav" class="hidden md:flex text-shadow-md space-x-6">
+            <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Modules">Modules</a></li>
+            <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="About">About</a></li>
+            <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Contact">Contact</a></li>
+        </ul>
+
+        <!-- Hamburger for mobile navigation -->
+        <div id="hamburger-icon" class="block md:hidden cursor-pointer space-y-2">
+            <span class="block h-0.5 w-7 bg-gray-100"></span>
+            <span class="block h-0.5 w-7 bg-gray-100"></span>
+            <span class="block h-0.5 w-7 bg-gray-100"></span>
+        </div>
+
+    </nav>
+
+    <!-- Navigation mobile version -->
+    <ul id="mobile-nav" class="hidden md:hidden text-shadow-md space-y-2 p-4 border border-t-0">
+        <li><a class="text-mlText p-1 text-lg hover:font-semibold" href="./" title="Modules">Modules</a></li>
+        <li><a class="text-mlText p-1 text-lg hover:font-semibold" href="./" title="About">About</a></li>
+        <li><a class="text-mlText p-1 text-lg hover:font-semibold" href="./" title="Contact">Contact</a></li>
+    </ul>
+
+    <!-- End of navigation -->
+
+    <Hero />
+    
+</header>
