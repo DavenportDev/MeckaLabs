@@ -30,9 +30,9 @@ const {pageTitle} = Astro.props;
 
           <!-- Navigation desktop version -->
           <ul id="desktop-nav" class="hidden md:flex text-shadow-md space-x-6">
-              <li><a class="text-mlText p-1" href="./" title="Modules">Modules</a></li>
-              <li><a class="text-mlText p-1" href="./" title="About">About</a></li>
-              <li><a class="text-mlText p-1" href="./" title="Contact">Contact</a></li>
+              <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Modules">Modules</a></li>
+              <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="About">About</a></li>
+              <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Contact">Contact</a></li>
           </ul>
 
           <!-- Hamburger for mobile navigation -->
@@ -46,9 +46,9 @@ const {pageTitle} = Astro.props;
         
         <!-- Navigation mobile version -->
         <ul id="mobile-nav" class="hidden md:hidden text-shadow-md space-y-2 p-4 border border-t-0">
-            <li><a class="text-mlText p-1 text-lg" href="./" title="Modules">Modules</a></li>
-            <li><a class="text-mlText p-1 text-lg" href="./" title="About">About</a></li>
-            <li><a class="text-mlText p-1 text-lg" href="./" title="Contact">Contact</a></li>
+            <li><a class="text-mlText p-1 text-lg hover:font-semibold" href="./" title="Modules">Modules</a></li>
+            <li><a class="text-mlText p-1 text-lg hover:font-semibold" href="./" title="About">About</a></li>
+            <li><a class="text-mlText p-1 text-lg hover:font-semibold" href="./" title="Contact">Contact</a></li>
         </ul>
 
         <!-- End of navigation -->
@@ -419,6 +419,36 @@ const {pageTitle} = Astro.props;
       </main>
       <footer>
         <!-- More foot -->
+        <section class="border border-mlText border-t-0 p-5 px-10">
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-fr">
+            <div class="flex flex-col gap-5 h-full">
+              <h2 class="text-lg font-semibold">Navigation</h2>
+              <ul class="list-disc pl-5 space-y-1">
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Modules">Modules</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="About">About</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-5 h-full">
+              <h2 class="text-lg font-semibold">Ways to Contact Me</h2>
+              <ul class="list-disc pl-5 space-y-1">
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Contact by Email">Contact Via Email</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Online Form">Contact Form</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="How to Find Me">How You Can Find Me.</a></li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-5 h-full">
+              <h2 class="text-lg font-semibold">Links and Social Media</h2>
+              <ul class="list-disc pl-5 space-y-1">
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Join my Discord Group">Discord Group</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Github">My GitHub</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="How to Find Me">LinkedIn</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- End of more foot -->
         <div class="border-x border-b border-mlText py-1 px-5 text-right text-sm">
           <p class="p-1">&copy; MeckaLabs 2026.</p>
         </div>
