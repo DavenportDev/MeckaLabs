@@ -1,0 +1,470 @@
+---
+import '../styles/global.css';
+const siteTitle = 'MeckaLabs';
+const {pageTitle} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+    <title>{siteTitle}{pageTitle && ` - ${pageTitle}`}</title>
+    <!-- Theme-aware favicons -->
+    <link rel="icon" href="/assets/favicon-white.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/assets/favicon-black.png" media="(prefers-color-scheme: dark)">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  </head>
+  <body class="text-mlText p-4">
+    <div class="container max-w-6xl mx-auto">
+      <header>
+        <nav class="mx-auto flex items-center justify-between p-3 border-mlText border">
+
+          <!-- Logo and site title -->
+          <a class="flex items-center text-mlText tracking-tight text-xl font-semibold" href="./">
+            <img src="/assets/logo-thicker.svg" alt="MeckaLabs Logo" class="h-7 w-7 mr-2">
+            MeckaLabs
+          </a>
+
+          <!-- Navigation desktop version -->
+          <ul id="desktop-nav" class="hidden md:flex text-shadow-md space-x-6">
+              <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Modules">Modules</a></li>
+              <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="About">About</a></li>
+              <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Contact">Contact</a></li>
+          </ul>
+
+          <!-- Hamburger for mobile navigation -->
+          <div id="hamburger-icon" class="block md:hidden cursor-pointer space-y-2">
+              <span class="block h-0.5 w-7 bg-gray-100"></span>
+              <span class="block h-0.5 w-7 bg-gray-100"></span>
+              <span class="block h-0.5 w-7 bg-gray-100"></span>
+          </div>
+
+        </nav>
+        
+        <!-- Navigation mobile version -->
+        <ul id="mobile-nav" class="hidden md:hidden text-shadow-md space-y-2 p-4 border border-t-0">
+            <li><a class="text-mlText p-1 text-lg hover:font-semibold" href="./" title="Modules">Modules</a></li>
+            <li><a class="text-mlText p-1 text-lg hover:font-semibold" href="./" title="About">About</a></li>
+            <li><a class="text-mlText p-1 text-lg hover:font-semibold" href="./" title="Contact">Contact</a></li>
+        </ul>
+
+        <!-- End of navigation -->
+
+        <div class="text-md border-t-0 flex flex-col md:flex-row border-x border-mlText">
+          <div class="md:basis-3/4">
+            <h2 class="md:text-7xl text-5xl font-bold p-4">Modular Systems for Engineering & Design</h2>
+            <hr class="border-mlText border-t-2 mx-4 mb-1">
+            <p class="text-mlText p-4 pt-0 text-xl">Innovative tools, automation, and UI solutions</p>
+            <a href="./" class="inline-block px-5 py-2 ml-5 mb-5 font-medium text-mlText hover:bg-gray-800 transition cursor-pointer border">Explore Modules</a>
+            <a href="./" class="inline-block px-5 py-2 ml-5 mb-5 font-medium text-mlText hover:bg-gray-800 transition cursor-pointer border">About the Lab</a>
+          </div>
+          <div class="md:basis-1/3">
+            <hr class="border-mlText border-t mx-4 mb-1 md:hidden">
+            <!-- System Status: probably change this later-->
+            <section class="max-w-md mx-auto p-5">
+              <div class="border border-mlText border-b-0">
+                <div class="space-y-2 text-mlText">
+                  <div class="flex justify-between px-5 py-2 border-b bg-gray-900">
+                    <h2 class="text-xl font-semibold text-shadow-md">System Status</h2>
+                  </div>
+                </div>
+                <div class="space-y-2 text-mlText px-5 py-2 border-b text-lg">
+                  <div class="flex justify-between">
+                    <span>Modules</span>
+                    <span>12</span>
+                  </div>
+                </div>
+                <div class="space-y-2 text-mlText px-5 py-2 border-b text-lg">
+                  <div class="flex justify-between">
+                    <span>Experiments</span>
+                    <span>4</span>
+                  </div>
+                </div>
+                <div class="space-y-2 text-mlText px-5 py-2 border-b text-lg">
+                  <div class="flex justify-between">
+                    <span>Tools</span>
+                    <span>3</span>
+                  </div>
+                </div>
+                <div class="space-y-2 text-mlText px-5 py-2 border-b text-lg">
+                  <div class="flex justify-between">
+                    <span>Version</span>
+                    <span>0.0.1</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </header>
+      <main class="border border-mlText">
+        <div class="p-5">
+          <h2 class="text-xl font-semibold pb-3 text-shadow-md">Modules Overview</h2>
+
+          <!-- Module cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 auto-rows-fr">
+            <!-- Boxes -->
+            
+            <div class="border border-mlText flex flex-col justify-between h-full">
+              <h3 class="text-lg font-semibold border-b border-mlText text-shadow-md p-5 py-3">Sifting Stats App</h3>
+              <div class="p-5">
+                <p class="font-semibold text-sm">Sifting App Tagline</p>
+                <p class="text-sm">Some description about the Sifting Stats App.</p>
+
+                <div class="flex gap-2 mt-5">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+              </div>
+            </div><!-- End of box -->
+
+            <div class="border border-mlText flex flex-col justify-between h-full">
+              <h3 class="text-lg font-semibold border-b border-mlText text-shadow-md p-5 py-3">Busool</h3>
+              <div class="p-5">
+                <p class="font-semibold text-sm">Busool Tools Platform</p>
+                <p class="text-sm">Some description about the Busool Tools Platform.</p>
+
+                <div class="flex gap-2 mt-5">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+              </div>
+            </div><!-- End of box -->
+
+            <div class="border border-mlText flex flex-col justify-between h-full">
+              <h3 class="text-lg font-semibold border-b border-mlText text-shadow-md p-5 py-3">Ocean Sparks Studios</h3>
+              <div class="p-5">
+                <p class="font-semibold text-sm">Ocean Sparks Studios Website</p>
+                <p class="text-sm">Some description about the Ocean Sparks Studios.</p>
+
+                <div class="flex gap-2 mt-5">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+              </div>
+            </div><!-- End of box -->
+
+            <div class="border border-mlText flex flex-col justify-between h-full">
+              <h3 class="text-lg font-semibold border-b border-mlText text-shadow-md p-5 py-3">Willo Photography</h3>
+              <div class="p-5">
+                <p class="font-semibold text-sm">Willo Photography SEO</p>
+                <p class="text-sm">Some description about the Willo Photography.</p>
+
+                <div class="flex gap-2 mt-5">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+              </div>
+            </div><!-- End of box -->
+
+            <div class="border border-mlText flex flex-col justify-between h-full">
+              <h3 class="text-lg font-semibold border-b border-mlText text-shadow-md p-5 py-3">Pangaea Creations LLC</h3>
+              <div class="p-5">
+                <p class="font-semibold text-sm">Pangaea Creations Game Development</p>
+                <p class="text-sm">Some description about the Pangaea Creations LLC.</p>
+
+                <div class="flex gap-2 mt-5">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+              </div>
+            </div><!-- End of box -->
+
+            <div class="border border-mlText flex flex-col justify-between h-full">
+              <h3 class="text-lg font-semibold border-b border-mlText text-shadow-md p-5 py-3">Woodlands Hospice</h3>
+              <div class="p-5">
+                <p class="font-semibold text-sm">Woodlands Hospice Content Management</p>
+                <p class="text-sm">Some description about the Woodlands Hospice.</p>
+
+                <div class="flex gap-2 mt-5">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+              </div>
+            </div><!-- End of box -->
+
+            <div class="border border-mlText flex flex-col justify-between h-full">
+              <h3 class="text-lg font-semibold border-b border-mlText text-shadow-md p-5 py-3">A Thiefs Tale</h3>
+              <div class="p-5">
+                <p class="font-semibold text-sm">A Thiefs Tale Website and Discord</p>
+                <p class="text-sm">Some description about the A Thiefs Tale.</p>
+
+                <div class="flex gap-2 mt-5">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+              </div>
+            </div><!-- End of box -->
+
+            <div class="border border-mlText flex flex-col justify-between h-full">
+              <h3 class="text-lg font-semibold border-b border-mlText text-shadow-md p-5 py-3">Tessaro Gymnastics Club</h3>
+              <div class="p-5">
+                <p class="font-semibold text-sm">Tessaro Gymnastics Club Website</p>
+                <p class="text-sm">Some description about the Tessaro Gymnastics Club.</p>
+
+                <div class="flex gap-2 mt-5">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+              </div>
+            </div><!-- End of box -->
+            
+          </div>
+        </div>
+
+        <!-- Engineering Stream -->
+        <div class="border-mlText">
+          <div class="flex justify-between items-center border-y px-5 py-2 border-mlText">
+            <h2 class="text-xl font-semibold text-shadow-md">Engineering Stream</h2>
+            <a href="./" class="inline-block font-medium text-sm text-mlText hover:font-semibold cursor-pointer">View All &gt;</a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-fr pb-5">
+            <!-- Module Card -->
+            <div class="flex items-start gap-5 justify-between h-full p-5 pb-0">
+
+              <!-- image -->
+              <div class="h-28 w-40 bg-gray-900 border border-mlText overflow-hidden justify-center items-center flex">
+                <img src="/assets/logo-white.svg" alt="Module Image" class="h-auto w-58 object-contain">
+              </div>
+
+              <div class="flex flex-col justify-between grow">
+                <h3 class="font-semibold">Astro Framework</h3>
+                <p class="text-sm grow">Some description about the Astro Framework.</p>
+
+                <div class="flex gap-2 mt-4">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+
+              </div>
+            </div><!-- End of Module Card -->
+
+            <div class="flex items-start gap-5 justify-between h-full p-5 pb-0">
+
+              <!-- image -->
+              <div class="h-28 w-40 bg-gray-900 border border-mlText overflow-hidden justify-center items-center flex">
+                <img src="/assets/logo-white.svg" alt="Module Image" class="h-auto w-58 object-contain">
+              </div>
+
+              <div class="flex flex-col justify-between grow">
+                <h3 class="font-semibold">Larvel Framework</h3>
+                <p class="text-sm grow">Some description about the Larvel Framework.</p>
+
+                <div class="flex gap-2 mt-4">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+
+              </div>
+            </div><!-- End of Module Card -->
+
+            <div class="flex items-start gap-5 justify-between h-full p-5 pb-0">
+
+              <!-- image -->
+              <div class="h-28 w-40 bg-gray-900 border border-mlText overflow-hidden justify-center items-center flex">
+                <img src="/assets/logo-white.svg" alt="Module Image" class="h-auto w-58 object-contain">
+              </div>
+
+              <div class="flex flex-col justify-between grow">
+                <h3 class="font-semibold">GitHub</h3>
+                <p class="text-sm grow">Some description about using GitHub development.</p>
+
+                <div class="flex gap-2 mt-4">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+
+              </div>
+            </div><!-- End of Module Card -->
+            
+          </div>
+        </div><!-- End of Engineering Stream -->
+
+        <!-- Design Stream -->
+        <div class="border-mlText">
+          <div class="flex justify-between items-center border-y px-5 py-2 border-mlText">
+            <h2 class="text-xl font-semibold text-shadow-md">Design Stream</h2>
+            <a href="./" class="inline-block font-medium text-sm text-mlText hover:font-semibold cursor-pointer">View All &gt;</a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-fr pb-5">
+            <!-- Module Card -->
+            <div class="flex items-start gap-5 justify-between h-full p-5 pb-0">
+
+              <!-- image -->
+              <div class="h-28 w-40 bg-gray-900 border border-mlText overflow-hidden justify-center items-center flex">
+                <img src="/assets/logo-white.svg" alt="Module Image" class="h-auto w-58 object-contain">
+              </div>
+
+              <div class="flex flex-col justify-between grow">
+                <h3 class="font-semibold">Tailwind Framework</h3>
+                <p class="text-sm grow">Some description about the Tailwind Framework.</p>
+
+                <div class="flex gap-2 mt-4">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+
+              </div>
+            </div><!-- End of Module Card -->
+
+            <div class="flex items-start gap-5 justify-between h-full p-5 pb-0">
+
+              <!-- image -->
+              <div class="h-28 w-40 bg-gray-900 border border-mlText overflow-hidden justify-center items-center flex">
+                <img src="/assets/logo-white.svg" alt="Module Image" class="h-auto w-58 object-contain">
+              </div>
+
+              <div class="flex flex-col justify-between grow">
+                <h3 class="font-semibold">React</h3>
+                <p class="text-sm grow">Some description about React Development.</p>
+
+                <div class="flex gap-2 mt-4">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+
+              </div>
+            </div><!-- End of Module Card -->
+
+            <div class="flex items-start gap-5 justify-between h-full p-5 pb-0">
+
+              <!-- image -->
+              <div class="h-28 w-40 bg-gray-900 border border-mlText overflow-hidden justify-center items-center flex">
+                <img src="/assets/logo-white.svg" alt="Module Image" class="h-auto w-58 object-contain">
+              </div>
+
+              <div class="flex flex-col justify-between grow">
+                <h3 class="font-semibold">Figma</h3>
+                <p class="text-sm grow">Some description about using Figma for design.</p>
+
+                <div class="flex gap-2 mt-4">
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                  <span class="h-4 w-5 bg-gray-700"></span>
+                </div>
+
+              </div>
+            </div><!-- End of Module Card -->
+            
+          </div>
+        </div><!-- End of Design Stream -->
+        <!-- Experimential Stream -->
+        <div>
+          <!-- Header -->
+          <div class="flex justify-between items-center border-y px-5 py-2 border-mlText">
+            <h2 class="text-xl font-semibold text-shadow-md">Experimential Stream</h2>
+            <a href="./" class="font-medium text-sm text-mlText hover:font-semibold cursor-pointer">
+              View All &gt;
+            </a>
+          </div>
+
+          <!-- Card -->
+          <div class="p-5 m-5 border-mlText border bg-gray-600/15">
+
+            <div class="flex items-start gap-5">
+
+              <!-- Content -->
+              <div class="flex flex-col justify-between grow">
+
+                <h3 class="text-lg md:text-xl font-semibold mb-2">Busool Platform</h3>
+
+                <ul class="list-disc pl-5 space-y-1 text-neutral-300 pb-4 md:text-lg">
+                  <li>Developed on top of old Busool concept project.</li>
+                  <li>New mobile friendly features using bootstrap.</li>
+                  <li>User friendly design, simple design with clear navigation.</li>
+                  <li>Keep tasks together, so you dont need to look for them.</li>
+                  <li>New list feature in progress, keep an eye out.</li>
+                  <li>New Idea: create flex/time sheet and connect it to tasks manager to keep time records.</li>
+                </ul>
+
+                <!-- Buttons -->
+                <div class="flex gap-3 mt-2">
+                  <a href="./" class="px-5 py-2 text-sm md:text-base text-mlText hover:bg-gray-800 transition border">
+                    More...
+                  </a>
+                  <a href="./" class="px-5 py-2 text-sm md:text-base text-mlText hover:bg-gray-800 transition border">
+                    View All &gt;
+                  </a>
+                </div>
+              </div>
+
+              <!-- Image -->
+              <div class="bg-gray-900 border border-mlText rounded flex items-center justify-center p-4 w-74 h-54 md:h-64 md:w-96">
+                <img src="/assets/logo-white.svg" alt="Module Image" class="object-contain h-full w-full">
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+      <footer>
+        <!-- More foot -->
+        <section class="border border-mlText border-t-0 p-5 px-10">
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-fr">
+            <div class="flex flex-col gap-5 h-full">
+              <h2 class="text-lg font-semibold">Navigation</h2>
+              <ul class="space-y-1">
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Modules">Modules</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="About">About</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-5 h-full">
+              <h2 class="text-lg font-semibold">Ways to Contact Me</h2>
+              <ul class="space-y-1">
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Contact by Email">Contact Via Email</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="Online Form">Contact Form</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./" title="How to Find Me">How You Can Find Me.</a></li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-5 h-full">
+              <h2 class="text-lg font-semibold">Links and Social Media</h2>
+
+              <ul class="grid grid-cols-2 gap-x-5 gap-y-1">
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./">Discord Group</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./">My GitHub</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./">LinkedIn</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./">Facebook</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./">YouTube</a></li>
+                <li><a class="text-mlText p-1 hover:font-semibold" href="./">Twitter / X</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- End of more foot -->
+        <div class="border-x border-b border-mlText py-1 px-5 text-right text-sm">
+          <p class="p-1">&copy; MeckaLabs 2026.</p>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const mobileNav = document.getElementById('mobile-nav');
+
+      hamburgerIcon.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>
