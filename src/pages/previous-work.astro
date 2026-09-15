@@ -1,0 +1,34 @@
+---
+import fs from 'fs';
+import path from 'path';
+
+const imagesDir = path.join(process.cwd(), 'public/images');
+const files = fs.readdirSync(imagesDir);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Previous Work</title>
+  </head>
+
+  <body class="bg-gray-100 min-h-screen p-8">
+    <h1 class="text-3xl font-bold mb-6">Previous Work Preview</h1>
+
+    <p class="mb-6 text-gray-700">
+      Archived screenshots from earlier freelance projects (2008–2018).
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {files.map(file => (
+        <a href={`/images/${file}`} target="_blank" class="block">
+          <img 
+            src={`/images/${file}`} 
+            alt={file} 
+            class="rounded-lg shadow-md hover:shadow-xl transition"
+          />
+        </a>
+      ))}
+    </div>
+  </body>
+</html>
